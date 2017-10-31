@@ -1,0 +1,14 @@
+#heading{
+    padding: 30px 20px;
+    background-color: purple;
+    color: white;
+    text-align: center;
+    font-size: 1.6em;
+    font-family: "Algerian", cursive;
+}
+
+section{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: lightgrey;
+}

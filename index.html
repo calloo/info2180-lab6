@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <title> Web Dictionary</title>
+        <link rel="stylesheet" href="main.css" type="text/css" />
         <script type="text/javascript" src="app.js"></script>
     </head>
     <body>
-        <button onclick="notify();">Search</button>
+        <header id="heading">Web Dictionary</header>
+        <section>
+            <form onsubmit="return lookup();" name="browse">
+                <input type="text" name="q" placeholder="Search"/>
+                <input type="submit" value="Search"/>
+        
+            </form>
+            
+            <hr>
+            <div id="result"></div>
+        </section>
+        
     </body>
 </html>
