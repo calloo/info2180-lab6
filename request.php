@@ -14,5 +14,20 @@ $definition = [
     "php" => "A server-side scripting language, and a powerful tool for making dynamic and interactive websites",
 ];
 
-print "<h3>" . strtoupper($query) . "</h3>";
-print "<p>" . $definition[$query] . "</p>";
+if(!empty($query)){
+    print "<h3>" . strtoupper($query) . "</h3>";
+    print "<p>" . $definition[$query] . "</p>";
+}else if (!empty($_GET["all"]) && $_GET["all"] == true){
+    header('Content-Type: text/xml');
+    
+    $dataset = new SimpleXMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\"?><entries></entries>");
+    
+    foreach($definition as $term => $meaning){
+        $defined = $dataset->addChild("definition", $meaning);
+        $defined->addAttribute("name", $term);
+        $defined->addAttribute("author", " Yannick Lyn Fatt");
+        
+    }
+    
+    echo $dataset->asXML();
+}
